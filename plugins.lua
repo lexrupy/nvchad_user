@@ -3,12 +3,13 @@ local plugins = {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
       require("core.utils").load_mappings("dap")
-    end
+    end,
   },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
+
       local dap = require("dap")
       local dapui = require("dapui")
       dapui.setup()
@@ -21,12 +22,11 @@ local plugins = {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
-
     end,
   },
   {
     "mfussenegger/nvim-dap-python",
-    ft = "python",
+    ft = { "python" },
     dependencies = {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
@@ -39,9 +39,9 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"python"},
+    ft = { "python" },
     opts = function()
-      return require "custom.configs.null-ls"
+      return require("custom.configs.null-ls")
     end,
   },
   {
@@ -49,20 +49,20 @@ local plugins = {
     opts = {
       ensure_installed = {
         "black",
+        "flake8",
         "pyright",
         "debugpy",
         -- "mypy",
         -- "ruff",
-      },
-    },
+      }
+    }
   },
   {
     "neovim/nvim-lspconfig",
-    config = function() 
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+    config = function()
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end,
-  },
+  }
 }
-
 return plugins
