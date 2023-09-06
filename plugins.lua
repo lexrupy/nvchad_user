@@ -63,6 +63,30 @@ local plugins = {
       require("plugins.configs.lspconfig")
       require("custom.configs.lspconfig")
     end,
-  }
+  },
+  -- {
+  --   "folke/which-key.nvim",
+  --   config = function()
+  --     local present, wk = pcall(require, "which-key")
+  --     if not present then
+  --       return
+  --     end
+  --     wk.register(
+  --       {
+  --         -- add group
+  --         ["<leader>"] = {
+  --           f = { name = "+file" },
+  --           c = { name = "+code" },
+  --           g = { name = "+git" },
+  --           l = { name = "+LSP" },
+  --           -- m = { name = "+tools" },
+  --           -- r = { name = "+git" },
+  --           -- t = { name = "+git" }, 
+  --           -- w = { name = "+git" },
+  --         }
+  --       }
+  --     )
+  --   end,
+  -- },
 }
 return plugins
