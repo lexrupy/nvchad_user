@@ -17,7 +17,7 @@ local plugins = {
         dapui.open()
       end
       dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
+
       end
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
@@ -88,5 +88,17 @@ local plugins = {
   --     )
   --   end,
   -- },
+  {
+    "Wansmer/treesj",
+    keys = {
+      {
+        "<leader>m",
+        "<CMD>TSJToggle<CR>",
+        desc = "Toggle Treesitter Join",
+      },
+    },
+    cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
+    opts = { use_default_keymaps = false }
+  },
 }
 return plugins

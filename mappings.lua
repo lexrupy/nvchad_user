@@ -24,6 +24,9 @@ M.abc = {
   n = {
     ["ç"] = {":"},
     ["Ç"] = {":"},
+    ["<c-d>"] = {"<c-d>zz", "Move Half Page DOWN"},
+    ["<c-u>"] = {"<c-u>zz", "Move Half Page UP"},
+    ["<leader>e"] = {"<cmd> NvimTreeToggle <CR>", "Toggle NvimTree"},
   }
 }
 
